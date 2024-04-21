@@ -1,18 +1,21 @@
-# Nome do projeto
+# Descontrole Financeiro
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+O objetivo deste projeto é conscientizar os adultos sobre a importância do controle financeiro e fornecer-lhes ferramentas e recursos para melhorar o seu planejamento mensal. Nesse viés, através de um aplicativo, buscamos educar as pessoas sobre como criar e manter um orçamento, compreender os riscos do endividamento excessivo e desenvolver hábitos financeiros saudáveis para o futuro. Além disso, o projeto visa oferecer orientações práticas sobre economia, investimentos e planejamento de metas financeiras de longo prazo, fazendo com que as pessoas tenham uma saúde financeira muito mais estável.
+
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Alice Shikida Salomão
+* Arthur Signorini Miranda
+* Beatriz Miranda Paiva
+* Eduardo Vianna Meira
+* Felipe Costa Unsonst
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* João Carlos Oliveira Caetano
+* Luciana Mara Freitas Diniz
+* Rommel Vieira Carneiro
 
 ## Instruções de utilização
 
