@@ -132,6 +132,7 @@ body {
 .content {
     width: 50%; 
     padding-right: 20px; 
+    font-size: 20px;
 }
 
 .image-container {
@@ -140,7 +141,7 @@ body {
 }
 
 .image-container img {
-    max-width: 80%; 
+    max-width: 100%; 
     height: auto; 
     border-radius: 10px;
 }
@@ -151,7 +152,7 @@ body {
 }
 
 .image-container2 img {
-    max-width: 80%; 
+    max-width: 90%; 
     height: auto; 
     border-radius: 10px;
 }
