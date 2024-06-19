@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI Sprite 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="yf.jpeg" alt="logoYF" width="10%" height="10%">
+                </a>
+            </div>
+            <nav class="menu-desktop">
+                <div class="txt-topo-site">
+                    <i class="bi bi-bell corner-icon"></i>
+                    <h2 class="titulo">DESPESAS E GANHOS</h2>
+                    <ul>
+                        <li><a href="#">Painel de Controle</a></li>
+                        <li><a href="#">Metas</a></li>
+                        <li><a href="#">Contas</a></li>
+                        <li><a href="#">Despesas</a></li>
+                        <li><a href="#">Menu</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="flex-box" id="despesas">
+            <h2>Despesas</h2>
+            <label for="categoria-despesas">Área:</label>
+            <select id="categoria-despesas">
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="moradia">Moradia</option>
+                <option value="lazer">Lazer</option>
+                <option value="saude">Saúde</option>
+            </select>
+            <label for="valor-despesas">Valor:</label>
+            <input type="number" id="valor-despesas" placeholder="Digite o valor">
+            <button onclick="adicionarDespesa()">Adicionar Despesa</button>
+        </div>
+
+        <div class="flex-box" id="ganhos">
+            <h2>Ganhos</h2>
+            <label for="valor-ganhos">Valor:</label>
+            <input type="number" id="valor-ganhos" placeholder="Digite o valor">
+            <button onclick="adicionarGanho()">Adicionar Ganho</button>
+        </div>
+
+        <div class="flex-box" id="motivo-gastos">
+            <h2>Por que há esse gasto?</h2>
+            <textarea id="motivo-texto" placeholder="Descreva o motivo do gasto"></textarea>
+        </div>
+
+        <div class="flex-box" id="solucoes">
+            <h2>Possíveis Medidas</h2>
+            <p id="solucoes-texto">Algumas sugestões de medidas aparecerão aqui.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
