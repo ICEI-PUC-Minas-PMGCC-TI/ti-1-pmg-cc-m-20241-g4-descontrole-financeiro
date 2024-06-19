@@ -1,5 +1,9 @@
-let totalDespesas = 0;
-let totalGanhos = 0;
+let totalDespesas = parseFloat(localStorage.getItem('totalDespesas')) || 0;
+let totalGanhos = parseFloat(localStorage.getItem('totalGanhos')) || 0;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    atualizarResumoFinancas();
+});
 
 function adicionarDespesa() {
     const categoria = document.getElementById('categoria-despesas').value;
@@ -7,6 +11,7 @@ function adicionarDespesa() {
 
     if (valor && valor > 0) {
         totalDespesas += valor;
+        localStorage.setItem('totalDespesas', totalDespesas);
         alert(`Despesa de ${categoria} no valor de R$${valor} adicionada.`);
         atualizarResumoFinancas();
         document.getElementById('valor-despesas').value = '';
@@ -20,6 +25,7 @@ function adicionarGanho() {
 
     if (valor && valor > 0) {
         totalGanhos += valor;
+        localStorage.setItem('totalGanhos', totalGanhos);
         alert(`Ganho de R$${valor} adicionado.`);
         atualizarResumoFinancas();
         document.getElementById('valor-ganhos').value = '';
