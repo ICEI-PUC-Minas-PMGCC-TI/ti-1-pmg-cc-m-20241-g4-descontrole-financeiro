@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TI Sprite 2</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header class="header">
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="yf.jpeg" alt="logoYF" width="10%" height="10%">
+                </a>
+            </div>
+            <nav class="menu-desktop">
+                <div class="txt-topo-site">
+                    <i class="bi bi-bell corner-icon"></i>
+                    <h2 class="titulo">INVESTIMENTOS</h2>
+                    <ul>
+                        <li><a href="#">Painel de Controle</a></li>
+                        <li><a href="#">Metas</a></li>
+                        <li><a href="#">Contas</a></li>
+                        <li><a href="#">Despesas</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Calendario</a></li>
+                        <li><a href="#">Calculadora de Metas</a></li>
+                        <li><a href="#">Investimentos</a></li>
+                        <li><a href="#">Calculadora de Investimentos</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="flex-container">
+            <div class="flex-box" id="videos">
+                <ul>
+                    <br/>
+                <h3>VÍDEOS</h3>
+                </br>
+                <!-- Vídeos do YouTube -->
+                <a href="https://www.youtube.com/watch?v=04dCmDtO7xY&t=0s"><img src="video1.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=L9BHpswD63c&t=0s"><img src="video2.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=WXtJxRozku0&t=0s"><img src="video3.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=18GRtRzOrMM&t=0s"><img src="video4.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=lYAfnDorzo0&t=0s"><img src="video5.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=3kFI-R3yjOA&t=0s"><img src="video6.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=bwjAW-C8sJY&t=0s"><img src="video7.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=ZOHUNsOJpxg&t=0s"><img src="video8.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.youtube.com/watch?v=eMDgWLWOX84&t=0s"><img src="video9.jpeg" class="media-object  img-responsive img-thumbnail"></a>
+                
+                </ul>
+            </div>
+            <div class="flex-box" id="artigos">
+                
+                <!-- Artigos do Google -->
+                <ul>
+                    <br/>
+                    <h3>ARTIGOS</h3>
+                    <br/>
+                    <a href="https://www.bv.com.br/bv-inspira/orientacao-financeira/comecar-a-investir"><img src="foto1.png" class="media-object  img-responsive img-thumbnail"></a>
+                     <a href="https://www.c6bank.com.br/blog/entenda-o-que-sao-classes-de-ativos"><img src="foto3.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://warren.com.br/magazine/como-analisar-uma-acao/"><img src="foto4.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://www.infomoney.com.br/guias/renda-fixa/"><img src="foto5.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://www.infomoney.com.br/guias/fundos-de-investimento/"><img src="foto6.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://www.nomadglobal.com/conteudos/estrategias-investimento"><img src="foto7.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2024-03/entenda-nova-tributacao-de-investimentos-no-exterior"><img src="foto10.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://www.nordinvestimentos.com.br/blog/ranking-das-melhores-corretoras-de-investimentos-no-brasil/"><img src="foto9.png" class="media-object  img-responsive img-thumbnail"></a>
+                    <a href="https://blog.genialinvestimentos.com.br/como-montar-uma-carteira-de-investimentos/"><img src="foto2.png" class="media-object  img-responsive img-thumbnail"></a>
+                    
+                </ul>
+            </div>
+            <div class="flex-box" id="progresso">
+                <h3>PROGRESSO</h3>
+                <!-- Progresso do usuário -->
+                <ul id="progresso-lista">
+                     <h3>PROGRESSO</h3>
+                    <br/>
+                    
+                    <li><input type="checkbox" id="video1-progress" onchange="atualizarProgresso('video1')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video1-progress" onchange="atualizarProgresso('video1')"> Concluiu o artigo </li>
+                    <br/>
+                    <li><input type="checkbox" id="video2-progress" onchange="atualizarProgresso('video2')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video2-progress" onchange="atualizarProgresso('video2')"> Concluiu o artigo </li>
+                    <br/>
+                    <li><input type="checkbox" id="video3-progress" onchange="atualizarProgresso('video3')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video3-progress" onchange="atualizarProgresso('video3')"> Concluiu o artigo </li>
+                    <br/>
+                    <li><input type="checkbox" id="video4-progress" onchange="atualizarProgresso('video4')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video4-progress" onchange="atualizarProgresso('video4')"> Concluiu o artigo </li>
+                    <br/>
+                    <li><input type="checkbox" id="video5-progress" onchange="atualizarProgresso('video5')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video5-progress" onchange="atualizarProgresso('video5')"> Concluiu o artigo</li>
+                    <br/>
+                    <li><input type="checkbox" id="video6-progress" onchange="atualizarProgresso('video6')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video6-progress" onchange="atualizarProgresso('video6')"> Concluiu o artigo</li>
+                    <br/>
+                    <li><input type="checkbox" id="video7-progress" onchange="atualizarProgresso('video7')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video7-progress" onchange="atualizarProgresso('video7')"> Concluiu o artigo</li>
+                    <br/>
+                    <li><input type="checkbox" id="video8-progress" onchange="atualizarProgresso('video8')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video8-progress" onchange="atualizarProgresso('video8')"> Concluiu o artigo</li>
+                    <br/>
+                    <li><input type="checkbox" id="video9-progress" onchange="atualizarProgresso('video9')"> Concluiu o vídeo </li>
+                    <li><input type="checkbox" id="video9-progress" onchange="atualizarProgresso('video9')"> Concluiu o artigo</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
