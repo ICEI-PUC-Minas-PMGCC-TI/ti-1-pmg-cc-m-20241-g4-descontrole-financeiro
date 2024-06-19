@@ -1,45 +1,55 @@
-function adicionarDespesa() {
-  const categoria = document.getElementById('categoria-despesas').value;
-  const valor = document.getElementById('valor-despesas').value;
+let totalDespesas = 0;
+let totalGanhos = 0;
 
-  if (valor && valor > 0) {
-      alert(`Despesa de ${categoria} no valor de R$${valor} adicionada.`);
-      // Aqui você pode adicionar a lógica para armazenar essa despesa
-  } else {
-      alert('Por favor, insira um valor válido.');
-  }
+function adicionarDespesa() {
+    const categoria = document.getElementById('categoria-despesas').value;
+    const valor = parseFloat(document.getElementById('valor-despesas').value);
+
+    if (valor && valor > 0) {
+        totalDespesas += valor;
+        alert(`Despesa de ${categoria} no valor de R$${valor} adicionada.`);
+        atualizarResumoFinancas();
+        document.getElementById('valor-despesas').value = '';
+    } else {
+        alert('Por favor, insira um valor válido.');
+    }
 }
 
 function adicionarGanho() {
-  const valor = document.getElementById('valor-ganhos').value;
+    const valor = parseFloat(document.getElementById('valor-ganhos').value);
 
-  if (valor && valor > 0) {
-      alert(`Ganho de R$${valor} adicionado.`);
-      // Aqui você pode adicionar a lógica para armazenar esse ganho
-  } else {
-      alert('Por favor, insira um valor válido.');
-  }
+    if (valor && valor > 0) {
+        totalGanhos += valor;
+        alert(`Ganho de R$${valor} adicionado.`);
+        atualizarResumoFinancas();
+        document.getElementById('valor-ganhos').value = '';
+    } else {
+        alert('Por favor, insira um valor válido.');
+    }
 }
 
-// Função que pode ser chamada para sugerir possíveis medidas
+function atualizarResumoFinancas() {
+    const lucroTotal = totalGanhos - totalDespesas;
+    document.getElementById('total-despesas').textContent = `R$ ${totalDespesas.toFixed(2)}`;
+    document.getElementById('total-ganhos').textContent = `R$ ${totalGanhos.toFixed(2)}`;
+    document.getElementById('lucro-total').textContent = `R$ ${lucroTotal.toFixed(2)}`;
+}
+
 function sugerirMedidas() {
-  const motivo = document.getElementById('motivo-texto').value;
+    const motivo = document.getElementById('motivo-texto').value;
+    let sugestoes = '';
 
-  let sugestoes = '';
+    if (motivo.toLowerCase().includes('alimentação')) {
+        sugestoes += 'Tente fazer mais refeições em casa e evitar comer fora.\n';
+    }
+    if (motivo.toLowerCase().includes('transporte')) {
+        sugestoes += 'Considere utilizar transporte público ou caronas para economizar.\n';
+    }
+    if (sugestoes === '') {
+        sugestoes = 'Reveja seus gastos e veja onde pode cortar custos.';
+    }
 
-  if (motivo.toLowerCase().includes('alimentação')) {
-      sugestoes += 'Tente fazer mais refeições em casa e evitar comer fora.\n';
-  }
-  if (motivo.toLowerCase().includes('transporte')) {
-      sugestoes += 'Considere utilizar transporte público ou caronas para economizar.\n';
-  }
-
-  if (sugestoes === '') {
-      sugestoes = 'Reveja seus gastos e veja onde pode cortar custos.';
-  }
-
-  document.getElementById('solucoes-texto').innerText = sugestoes;
+    document.getElementById('solucoes-texto').innerText = sugestoes;
 }
 
-// Chamar a função sugerirMedidas quando o motivo do gasto for inserido
 document.getElementById('motivo-texto').addEventListener('input', sugerirMedidas);
