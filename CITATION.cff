@@ -1,31 +1,49 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Descontre Financeiro
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Shikida Salomão
+    given-names: Alice
+  - family-names: Signorini Miranda
+    given-names: Arthur
+  - family-names: Miranda Paiva
+    given-names: Beatriz
+  - family-names: Vianna Meira
+    given-names: Eduardo
+  - family-names: Unsonst Costa
+    given-names: Felipe
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Oliveira Caetano
+    given-names: João Carlos
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Freitas Diniz
+    given-names: Luciana Mara
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Ramos Costa
+    given-names: Pedro Henrique
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
+
 keywords:
-  - 
-  - 
+  - Metas;
+  - Gerenciamento;
+  - Investimento;
+  - Despesas;
+  - Contas;
+  - Saldo;
+  - Lucro;
+  - Planejamento; 
+  - Poupança;
+  - Relatório;
+  - Economia;
+  - Análise Financeira;
+
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
