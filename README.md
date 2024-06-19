@@ -16,6 +16,7 @@ O objetivo deste projeto é conscientizar os adultos sobre a importância do con
 * João Carlos Oliveira Caetano
 * Luciana Mara Freitas Diniz
 * Rommel Vieira Carneiro
+* Pedro Henrique Ramos Costa
 
 ## Instruções de utilização
 
