@@ -1,39 +1,11 @@
-const contas = JSON.parse(localStorage.getItem('contas')) || [];
+let contas = JSON.parse(localStorage.getItem('contas')) || [];
 const form = document.getElementById('form');
 const contasDiv = document.getElementById('contas');
-let contaEditando = null; 
-
-function carregarContas() {
-    fetch('contas.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao carregar contas.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        contas = data;
-        console.log('Contas carregadas com sucesso.');
-        mostrarContas();
-    })
-    .catch(error => console.error('Erro:', error));
-}
+let contaEditando = null;
 
 function salvarContas() {
-    fetch('contas.json', {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(contas),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao salvar contas.');
-        }
-        console.log('Contas salvas com sucesso.');
-    })
-    .catch(error => console.error('Erro:', error));
+    localStorage.setItem('contas', JSON.stringify(contas));
+    console.log('Contas salvas com sucesso no localStorage.');
 }
 
 function rolarParaOTopo() {
@@ -41,7 +13,6 @@ function rolarParaOTopo() {
 }
 
 function mostrarContas() {
-    
     contas.sort((a, b) => new Date(a.VENCIMENTO) - new Date(b.VENCIMENTO));
 
     contasDiv.innerHTML = '';
@@ -58,7 +29,7 @@ function mostrarContas() {
         cardDiv.classList.add('card');
         cardDiv.innerHTML = `
             <div class="card-body proxima-semana" data-dias-restantes="${calcularDiasRestantes(conta.VENCIMENTO)}">
-                <h3><strong></strong> ${conta.TIPO}</h3>
+                <h3><strong>${conta.TIPO}</strong>
                 <p><strong>Vencimento:&nbsp&nbsp</strong> ${formatarData(conta.VENCIMENTO)}</p> <br>
                 <p><strong>Preço:&nbsp&nbsp</strong> R$ ${conta.PRECO}</p> <br>
                 <p class="descricao"><strong>Descrição:&nbsp&nbsp&nbsp</strong>${conta.DESCRICAO}</span></p> <br>
@@ -90,7 +61,6 @@ function mostrarContas() {
     });
 }
 
-
 function calcularDiasRestantes(dataVencimento) {
     const vencimento = new Date(dataVencimento);
     const hoje = new Date();
@@ -108,9 +78,9 @@ function estaProximaSemana(data) {
 }
 
 function pagarConta(id) {
-    contas.splice(contas.findIndex(conta => conta.ID === id), 1); 
-    salvarContas(); 
-    mostrarContas(); 
+    contas = contas.filter(conta => conta.ID !== id);
+    salvarContas();
+    mostrarContas();
 }
 
 function preencherFormulario(conta) {
@@ -138,11 +108,11 @@ form.addEventListener('submit', function (event) {
     const vencimento = new Date(vencimentoInput.value);
 
     const hoje = new Date();
-    hoje.setHours(0, 0, 0, 0); 
+    hoje.setHours(0, 0, 0, 0);
 
     if (vencimento < hoje) {
         alert('A data de vencimento não pode ser uma data que já passou.');
-        vencimentoInput.focus(); 
+        vencimentoInput.focus();
         return;
     }
 
@@ -150,7 +120,7 @@ form.addEventListener('submit', function (event) {
         alert('Por favor, preencha todos os campos.');
         return;
     }
-    
+
     if (contaEditando) {
         contaEditando.TIPO = tipo;
         contaEditando.VENCIMENTO = vencimentoInput.value;
@@ -158,15 +128,15 @@ form.addEventListener('submit', function (event) {
         contaEditando.DESCRICAO = descricao;
         contaEditando = null;
     } else {
-        contas.push({
-            ID: contas.length + 1,
+        const novaConta = {
+            ID: contas.length > 0 ? contas[contas.length - 1].ID + 1 : 1,
             TIPO: tipo,
             VENCIMENTO: vencimentoInput.value,
             PRECO: preco,
             DESCRICAO: descricao
-        });
+        };
+        contas.push(novaConta);
     }
-    
 
     salvarContas();
     mostrarContas();
