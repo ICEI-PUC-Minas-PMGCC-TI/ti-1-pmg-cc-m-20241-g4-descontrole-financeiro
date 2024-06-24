@@ -1,11 +1,35 @@
-let contas = JSON.parse(localStorage.getItem('contas')) || [];
 const form = document.getElementById('form');
 const contasDiv = document.getElementById('contas');
 let contaEditando = null;
 
+function leDados() {
+    let strDados = localStorage.getItem('contas');
+    let objDados = {};
+
+    if (strDados) {
+        objDados = JSON.parse(strDados);
+    } else {
+        objDados = { contas: [] };
+    }
+
+    return objDados;
+}
+
+function salvaDados(dados) {
+    localStorage.setItem('contas', JSON.stringify(dados));
+}
+
+function carregarContas() {
+    let objDados = leDados();
+    contas = objDados.contas;
+    console.log('Contas carregadas com sucesso.');
+    mostrarContas();
+}
+
 function salvarContas() {
-    localStorage.setItem('contas', JSON.stringify(contas));
-    console.log('Contas salvas com sucesso no localStorage.');
+    let objDados = { contas };
+    salvaDados(objDados);
+    console.log('Contas salvas com sucesso.');
 }
 
 function rolarParaOTopo() {
@@ -29,7 +53,7 @@ function mostrarContas() {
         cardDiv.classList.add('card');
         cardDiv.innerHTML = `
             <div class="card-body proxima-semana" data-dias-restantes="${calcularDiasRestantes(conta.VENCIMENTO)}">
-                <h3><strong>${conta.TIPO}</strong>
+                <h3><strong></strong> ${conta.TIPO}</h3>
                 <p><strong>Vencimento:&nbsp&nbsp</strong> ${formatarData(conta.VENCIMENTO)}</p> <br>
                 <p><strong>Preço:&nbsp&nbsp</strong> R$ ${conta.PRECO}</p> <br>
                 <p class="descricao"><strong>Descrição:&nbsp&nbsp&nbsp</strong>${conta.DESCRICAO}</span></p> <br>
@@ -48,7 +72,7 @@ function mostrarContas() {
             const conta = contas.find(c => c.ID === id);
             preencherFormulario(conta);
             contaEditando = conta;
-            rolarParaOTopo(); 
+            rolarParaOTopo();
         });
     });
 
@@ -78,7 +102,7 @@ function estaProximaSemana(data) {
 }
 
 function pagarConta(id) {
-    contas = contas.filter(conta => conta.ID !== id);
+    contas.splice(contas.findIndex(conta => conta.ID === id), 1);
     salvarContas();
     mostrarContas();
 }
@@ -128,14 +152,13 @@ form.addEventListener('submit', function (event) {
         contaEditando.DESCRICAO = descricao;
         contaEditando = null;
     } else {
-        const novaConta = {
-            ID: contas.length > 0 ? contas[contas.length - 1].ID + 1 : 1,
+        contas.push({
+            ID: contas.length + 1,
             TIPO: tipo,
             VENCIMENTO: vencimentoInput.value,
             PRECO: preco,
             DESCRICAO: descricao
-        };
-        contas.push(novaConta);
+        });
     }
 
     salvarContas();
@@ -143,4 +166,4 @@ form.addEventListener('submit', function (event) {
     form.reset();
 });
 
-mostrarContas();
+carregarContas();
