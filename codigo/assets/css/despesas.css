@@ -33,6 +33,22 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.header .logo {
+    margin-right: auto; /* Aligns the logo to the far left */
+    font-size: 30px;
+    float: left;
+    border-radius: 20px;
+    max-width: 250px;
+}
+
+.header .logo img {
+    width: 80%;
+    height: auto;
+}
+
+.header .menu-mobile { 
+    display: none;
+}
 .logo {
     float: left;
 }
