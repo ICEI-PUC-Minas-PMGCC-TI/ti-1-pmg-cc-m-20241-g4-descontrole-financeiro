@@ -1,14 +1,27 @@
+// Função para ler os dados do JSON no localStorage
+function lerDadosLocalStorage() {
+    var dados = localStorage.getItem('dadosFinanceiros');
+    return dados ? JSON.parse(dados) : { totalGanhos: 0, totalDespesas: 0 };
+}
+
 // Função para atualizar o gráfico com base nas seleções feitas
 function atualizarGrafico() {
     var mesSelecionado = document.getElementById("intervaloMes").value;
     var semanaSelecionada = document.getElementById("intervaloSemanal").value;
 
-    // Gerar dados fictícios para ganhos e despesas em um determinado mês e semana
+    // Obter os dados do localStorage
+    var dados = lerDadosLocalStorage();
+    var totalGanhos = dados.totalGanhos;
+    var totalDespesas = dados.totalDespesas;
+
+    // Gerar dados para ganhos e despesas em um determinado mês e semana
     var dadosGanhos = [];
     var dadosDespesas = [];
+
+    // Dividindo igualmente por 7 dias da semana
     for (var i = 1; i <= 7; i++) {
-        dadosGanhos.push(Math.random() * 1000); // Ganhos aleatórios entre 0 e 1000
-        dadosDespesas.push(Math.random() * 500); // Despesas aleatórias entre 0 e 500
+        dadosGanhos.push(totalGanhos / 7);
+        dadosDespesas.push(totalDespesas / 7);
     }
 
     // Atualizar o gráfico com os novos dados
