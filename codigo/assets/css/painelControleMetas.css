@@ -27,40 +27,33 @@ body {
     padding: 20px;
     background-color: #F3E7E7;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Para espaçar o conteúdo */
     align-items: center;
-    flex-direction: column; /* Added */
 }
 
 .header .logo {
-    margin-right: auto; /* Aligns the logo to the far left */
-    font-size: 30px;
-    float: left;
-    border-radius: 20px;
-    max-width: 250px;
+    float: left; /* Posiciona a logo à esquerda */
 }
 
 .header .logo img {
-    width: 100%;
-    height: auto;
-}
-
-.header .menu-mobile {
-    display: none;
+    max-width: 100px;
 }
 
 .menu-desktop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-right: 300px; /* Removed duplicate */
-    background-color: #F3E7E7; /* Moved from .menu-desktop duplicate */
+    text-align: center; 
+    padding-left: 230px;
 }
 
 .menu-desktop ul {
     list-style-type: none;
     display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.txt-topo-site {
+    display: inline-block;
+    padding: 0 20px;
 }
 
 .menu-desktop ul li {
@@ -72,17 +65,13 @@ body {
     color: #817f7f;
     font-size: 24px;
     text-decoration: none;
+    display: inline-block;
 }
 
 .menu-desktop ul li a:hover {
     color: #656464;
     transform: scale(1.2);
     transition: .2s;
-}
-
-.txt-topo-site {
-    text-align: center;
-    flex-grow: 1; /* Take up remaining space */
 }
 
 .txt-topo-site .titulo {
@@ -121,12 +110,6 @@ body {
 }
 
 /* Adjustments from the second block */
-
-.logo img {
-    max-width: 300px; /* Reduce the size of the logo image */
-    height: auto;
-}
-
 header > .interface {
     display: flex;
     justify-content: space-between;
