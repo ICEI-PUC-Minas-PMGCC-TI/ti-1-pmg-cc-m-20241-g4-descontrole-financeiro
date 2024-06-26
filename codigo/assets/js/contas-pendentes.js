@@ -15,8 +15,25 @@ function leDados() {
     return objDados;
 }
 
+function leDadosPagos() {
+    let strDadosPagos = localStorage.getItem('contasPagas');
+    let objDadosPagos = {};
+
+    if (strDadosPagos) {
+        objDadosPagos = JSON.parse(strDadosPagos);
+    } else {
+        objDadosPagos = { contasPagas: [] };
+    }
+
+    return objDadosPagos;
+}
+
 function salvaDados(dados) {
     localStorage.setItem('contas', JSON.stringify(dados));
+}
+
+function salvaDadosPagos(dadosPagos) {
+    localStorage.setItem('contasPagas', JSON.stringify(dadosPagos));
 }
 
 function carregarContas() {
@@ -102,9 +119,16 @@ function estaProximaSemana(data) {
 }
 
 function pagarConta(id) {
-    contas.splice(contas.findIndex(conta => conta.ID === id), 1);
-    salvarContas();
-    mostrarContas();
+    const contaIndex = contas.findIndex(conta => conta.ID === id);
+    if (contaIndex !== -1) {
+        const contaPaga = contas.splice(contaIndex, 1)[0];
+        let objDadosPagos = leDadosPagos();
+        objDadosPagos.contasPagas.push(contaPaga);
+        salvaDadosPagos(objDadosPagos);
+        salvarContas();
+        mostrarContas();
+        console.log('Conta paga com sucesso.');
+    }
 }
 
 function preencherFormulario(conta) {
