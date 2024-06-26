@@ -2,8 +2,24 @@ let totalDespesas = parseFloat(localStorage.getItem('totalDespesas')) || 0;
 let totalGanhos = parseFloat(localStorage.getItem('totalGanhos')) || 0;
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    carregarContasPagasComoDespesas();
     atualizarResumoFinancas();
 });
+
+function carregarContasPagasComoDespesas() {
+    let strDadosPagos = localStorage.getItem('contasPagas');
+    let objDadosPagos = {};
+
+    if (strDadosPagos) {
+        objDadosPagos = JSON.parse(strDadosPagos);
+    } else {
+        objDadosPagos = { contasPagas: [] };
+    }
+
+    objDadosPagos.contasPagas.forEach(conta => {
+        totalDespesas += parseFloat(conta.PRECO);
+    });
+}
 
 function adicionarDespesa() {
     const categoria = document.getElementById('categoria-despesas').value;
