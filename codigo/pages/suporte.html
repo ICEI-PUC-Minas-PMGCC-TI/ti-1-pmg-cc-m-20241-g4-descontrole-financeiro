@@ -24,7 +24,7 @@
 
         .interface {
             max-width: 1280px;
-            margin: 0 auto;
+            
         }
 
         .header {
@@ -43,6 +43,7 @@
 
         .menu-desktop {
             text-align: center;
+            padding-left: 285px;
         }
 
         .menu-desktop ul {
@@ -79,11 +80,11 @@
         }
 
         .corner-icon {
-            position: fixed;
-            top: 20px;
+            position: absolute;
+            top:10px;
             right: 20px;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -92,6 +93,7 @@
             border-radius: 5px;
             font-size: 20px;
             cursor: pointer;
+            margin-top: 10px;
         }
 
         .corner-icon:hover {
@@ -102,10 +104,17 @@
             cursor: pointer;
         }
 
+        .corner-icon + .corner-icon {
+            margin-top: 70px;
+        }
+
         /* SUPORTE */
         .support-section {
             padding: 20px;
-            background-color: #F3E7E7;
+            background-color: #BDB4B5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .support-section h1 {
@@ -116,7 +125,7 @@
         .problem {
             cursor: pointer;
             margin-bottom: 10px;
-            padding: 10px;
+            padding: 10px 50px;
             background-color: #E0D4D4;
             border-radius: 5px;
             transition: background-color 0.3s;
@@ -129,7 +138,7 @@
         .solution {
             display: none;
             margin-bottom: 20px;
-            padding: 10px;
+            padding: 25px;
             background-color: #EDEDED;
             border-radius: 5px;
         }
@@ -196,6 +205,7 @@
             <nav class="menu-desktop">
                 <div class="txt-topo-site">
                     <i class="bi bi-bell corner-icon"></i>
+                    <i class="bi bi-cash corner-icon"></i>
                     <h2 class="titulo">PERFIL</h2>
                     <ul>
                         <li><a href="../index.html">Menu</a></li>
