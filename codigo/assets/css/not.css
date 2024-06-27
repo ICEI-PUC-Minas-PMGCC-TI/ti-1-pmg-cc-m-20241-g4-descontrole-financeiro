@@ -11,14 +11,12 @@
 
 
 body {
-    font-family: montserrat;
     background-color: #BDB4B5;
+    height: 100%;
 }
 
 section {
-    background: url(bg1.jpg) no-repeat;
-    background-size: cover;
-    height: calc(100vh - 80px);
+    padding: 40px 4%;
 }
 
 .popup-container {
@@ -82,18 +80,22 @@ main {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #88888a7a;
+    background-color: #BDB4B5;
     padding: 50px;
-    margin: 0;
     border-radius: 0;
-}
-
-div {
-    margin: 15px;
 }
 
 .popup:hover {
     border-color: rgb(241, 236, 236);
+}
+
+#search-container {
+    margin-top: 40px;
+    background-color: #BDB4B5;
+}
+
+input {
+    border-radius: 10px;
 }
 
 @keyframes glowing {
@@ -133,7 +135,11 @@ p {
 
 .header {
     padding: 20px;
-    background-color: #fbfbfb;
+    background-color: #F3E7E7;
+}
+
+.header img {
+    max-width: 100px;
 }
 
 .logo {
@@ -176,15 +182,15 @@ p {
     color: #000000;
     font-size: 30px;
     margin: 15px 0;
-    padding-right: 100px;
+    padding-right: 53px;
 }
 
 .corner-icon {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,6 +199,7 @@ p {
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .corner-icon:hover {
@@ -203,9 +210,6 @@ p {
     cursor: pointer;
 }
 
-strong {
-    color: #000000;
-}
 li {
     text-align: center;
 }
