@@ -1,56 +1,51 @@
-// Função para ler os dados do JSON no localStorage
-function lerDadosLocalStorage() {
-    var dados = localStorage.getItem('dadosFinanceiros');
-    return dados ? JSON.parse(dados) : { totalGanhos: 0, totalDespesas: 0 };
-}
+JS:
 
-// Função para atualizar o gráfico com base nas seleções feitas
+//import {intDespesas} from './despesas'
+;
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    atualizarGrafico();
+});
+
 function atualizarGrafico() {
-    var mesSelecionado = document.getElementById("intervaloMes").value;
-    var semanaSelecionada = document.getElementById("intervaloSemanal").value;
+    const mesSelecionado = document.getElementById("intervaloMes") ? document.getElementById("intervaloMes").value : "Mensal";
+    const semanaSelecionada = document.getElementById("intervaloSemanal") ? document.getElementById("intervaloSemanal").value : "Semana";
 
-    // Obter os dados do localStorage
-    var dados = lerDadosLocalStorage();
-    var totalGanhos = dados.totalGanhos;
-    var totalDespesas = dados.totalDespesas;
+    // Recuperar dados de ganhos e despesas do localStorage
+    const totalGanhos = parseFloat(localStorage.getItem('totalGanhos')) || 0;
+    const totalDespesas = parseFloat(localStorage.getItem('totalDespesas')) || 0;
 
-    // Gerar dados para ganhos e despesas em um determinado mês e semana
-    var dadosGanhos = [];
-    var dadosDespesas = [];
-
-    // Dividindo igualmente por 7 dias da semana
-    for (var i = 1; i <= 7; i++) {
-        dadosGanhos.push(totalGanhos / 7);
-        dadosDespesas.push(totalDespesas / 7);
-    }
+    // Gerar dados fictícios para ganhos e despesas em um determinado mês e semana
+    const dadosGanhos = Array(7).fill(totalGanhos / 7); // Dividir total de ganhos igualmente entre 7 dias
+    const dadosDespesas = Array(7).fill(totalDespesas / 7); // Dividir total de despesas igualmente entre 7 dias
 
     // Atualizar o gráfico com os novos dados
     atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, semanaSelecionada);
 }
 
-// Função para atualizar o gráfico com os novos dados
 function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, semanaSelecionada) {
     // Limpar o gráfico existente, se houver
     d3.select("#grafico").select("svg").remove();
 
     // Configurações do gráfico
-    var width = 400;
-    var height = 200;
-    var barWidth = width / 7; // Assumindo que há 7 dias em uma semana
+    const width = 400;
+    const height = 200;
+    const barWidth = width / 7; // Assumindo que há 7 dias em uma semana
 
     // Seleciona o elemento SVG onde o gráfico será desenhado
-    var svg = d3.select("#grafico")
+    const svg = d3.select("#grafico")
         .append("svg")
         .attr("width", width)
         .attr("height", height);
 
     // Escalas para eixo x e y
-    var xScale = d3.scaleBand()
+    const xScale = d3.scaleBand()
         .domain(d3.range(1, 8)) // Dias da semana
         .range([0, width])
         .padding(0.1);
 
-    var yScale = d3.scaleLinear()
+    const yScale = d3.scaleLinear()
         .domain([0, d3.max(dadosGanhos.concat(dadosDespesas))])
         .range([height, 0]);
 
@@ -59,10 +54,10 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
         .data(dadosGanhos)
         .enter().append("rect")
         .attr("class", "bar-ganhos")
-        .attr("x", function (d, i) { return xScale(i + 1); })
-        .attr("y", function (d) { return yScale(d); })
+        .attr("x", (d, i) => xScale(i + 1))
+        .attr("y", d => yScale(d))
         .attr("width", xScale.bandwidth() / 2)
-        .attr("height", function (d) { return height - yScale(d); })
+        .attr("height", d => height - yScale(d))
         .attr("fill", "green");
 
     // Desenha as barras de despesas
@@ -70,15 +65,15 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
         .data(dadosDespesas)
         .enter().append("rect")
         .attr("class", "bar-despesas")
-        .attr("x", function (d, i) { return xScale(i + 1) + xScale.bandwidth() / 2; })
-        .attr("y", function (d) { return yScale(d); })
+        .attr("x", (d, i) => xScale(i + 1) + xScale.bandwidth() / 2)
+        .attr("y", d => yScale(d))
         .attr("width", xScale.bandwidth() / 2)
-        .attr("height", function (d) { return height - yScale(d); })
+        .attr("height", d => height - yScale(d))
         .attr("fill", "red");
 
     // Adiciona eixos
     svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(xScale));
 
     svg.append("g")
@@ -89,11 +84,9 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
         .attr("x", width / 2)
         .attr("y", 20)
         .attr("text-anchor", "middle")
-        .text("Ganhos e Despesas - " + mesSelecionado + " - Semana " + semanaSelecionada);
+        .text(`Ganhos e Despesas - ${mesSelecionado} - Semana ${semanaSelecionada}`);
 }
 
-// Chamada inicial da função para atualizar o gráfico
-atualizarGrafico();
 
 
 //ELEMENTOS POPUP
