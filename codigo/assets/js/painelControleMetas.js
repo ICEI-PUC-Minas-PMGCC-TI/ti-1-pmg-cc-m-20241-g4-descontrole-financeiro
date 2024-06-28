@@ -23,10 +23,10 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
     d3.select("#grafico").select("svg").remove();
 
     // Configurações do gráfico
-    const width = 800;
-    const height = 270;
+    const width = 1200;
+    const height = 280;
     const minGraphHeight = 0; // Altura mínima para o gráfico
-    const maxValue = Math.max(...dadosGanhos, ...dadosDespesas); // Valor máximo baseado nos dados
+    const maxValue = 4000; // Valor máximo baseado nos dados
     const barWidth = width / 7; // Assumindo que há 7 dias em uma semana
 
     // Seleciona o elemento SVG onde o gráfico será desenhado
