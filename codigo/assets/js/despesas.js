@@ -75,3 +75,27 @@ function sugerirMedidas() {
 }
 
 document.getElementById('motivo-texto').addEventListener('input', sugerirMedidas);
+
+document.getElementById('reset-financas').addEventListener('click', resetFinancas);
+
+function resetFinancas() {
+    totalDespesas = 0;
+    totalGanhos = 0;
+
+    // Resetar o valor das contas pagas
+    let strDadosPagos = localStorage.getItem('contasPagas');
+    let objDadosPagos = {};
+
+    if (strDadosPagos) {
+        objDadosPagos = JSON.parse(strDadosPagos);
+        objDadosPagos.contasPagas.forEach(conta => {
+            conta.PRECO = 0;
+        });
+        localStorage.setItem('contasPagas', JSON.stringify(objDadosPagos));
+    }
+
+    localStorage.setItem('totalDespesas', totalDespesas);
+    localStorage.setItem('totalGanhos', totalGanhos);
+    atualizarResumoFinancas();
+    alert('Ganhos e despesas foram zerados.');
+}
