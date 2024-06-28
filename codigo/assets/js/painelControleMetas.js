@@ -1,9 +1,3 @@
-JS:
-
-//import {intDespesas} from './despesas'
-;
-
-
 document.addEventListener('DOMContentLoaded', (event) => {
     atualizarGrafico();
 });
@@ -29,8 +23,10 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
     d3.select("#grafico").select("svg").remove();
 
     // Configurações do gráfico
-    const width = 400;
-    const height = 200;
+    const width = 800;
+    const height = 270;
+    const minGraphHeight = 0; // Altura mínima para o gráfico
+    const maxValue = Math.max(...dadosGanhos, ...dadosDespesas); // Valor máximo baseado nos dados
     const barWidth = width / 7; // Assumindo que há 7 dias em uma semana
 
     // Seleciona o elemento SVG onde o gráfico será desenhado
@@ -46,7 +42,7 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
         .padding(0.1);
 
     const yScale = d3.scaleLinear()
-        .domain([0, d3.max(dadosGanhos.concat(dadosDespesas))])
+        .domain([minGraphHeight, maxValue])
         .range([height, 0]);
 
     // Desenha as barras de ganhos
@@ -79,13 +75,10 @@ function atualizarGraficoComDados(dadosGanhos, dadosDespesas, mesSelecionado, se
     svg.append("g")
         .call(d3.axisLeft(yScale));
 
-    // Adiciona título ao gráfico
-    svg.append("text")
-        .attr("x", width / 2)
-        .attr("y", 20)
-        .attr("text-anchor", "middle")
-        .text(`Ganhos e Despesas - ${mesSelecionado} - Semana ${semanaSelecionada}`);
+    
 }
+
+
 
 
 
