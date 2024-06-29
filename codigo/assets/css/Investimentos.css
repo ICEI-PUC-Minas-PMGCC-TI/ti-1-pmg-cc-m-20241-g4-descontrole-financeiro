@@ -1,96 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
 
-header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-}
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 10px;
-  text-align:center;
-  align-content: text-bottom;
-  justify-items:text-bottom;
 
-}
-
-.flex-box {
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 20px;
-  width: 300px;
-  box-sizing: border-box;
-  text-align: center;
-  align-content: text-bottom;
-  justify-items: text-bottom;
-}
-
-h2 {
-  text-align: center;
-  padding: 40px 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 300px 0;
-}
-
-ul li {
-  margin: 10px 0;
-}
-ul img{
-  width:150px;
-  height: 100px;
-}
-ul videos{
-  width:150px;
-  height: 100px;
-}
-ul h3{
-  text-align: center;
-  padding-right: 400px 0;
-}
-
-.flex-box h3 {
-  margin-top: 0;
-}
-.flex-box label,
-.flex-box input,
-.flex-box select,
-.flex-box textarea,
-.flex-box button {
-    margin: 5px 0;
-    padding: 10px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .flex-box {
-      width: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  .flex-box {
-      width: 100%;
-  }
-}
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+  padding: 40px 4%;
 }
 
 body {
@@ -98,42 +22,25 @@ body {
   height: 100vh;
 }
 
-
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
   padding: 20px;
   background-color: #F3E7E7;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.header .logo {
-  float: left;
-}
-
-.header .logo img {
-  width: 100px; 
-}
-
 .header img {
-  max-width: 100px; 
+  max-width: 100px;
 }
 
 .logo {
-  float:left;
+  float: left;
 }
 
 .menu-desktop {
   text-align: center;
-  padding-left: 310px;
 }
 
 .menu-desktop ul {
   list-style-type: none;
-  display: block;
-  padding: 0;
+  display: inline-block;
 }
 
 .txt-topo-site {
@@ -169,17 +76,17 @@ body {
   position: absolute;
   top: 10px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 50px; 
+  height: 50px; 
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #848688;
   color: #fff;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 20px; 
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 10px; 
 }
 
 .corner-icon:hover {
@@ -191,37 +98,96 @@ body {
 }
 
 .corner-icon + .corner-icon {
-  margin-top: 70px;
+  margin-top: 70px; 
 }
 
-.container {
-  width: 90%;
-  max-width: 800px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+
+
+.flex-container {
   display: flex;
-  flex-direction: column;
-  margin-top: 150px; /* Espaço para o header fixo */
-  text-align: center;
-  align-content: center;
-  justify-items: center;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 .flex-box {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  margin: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  text-align:center;
-  align-content: center;
-  justify-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.flex-box h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.flex-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flex-box ul li {
+  margin-bottom: 10px;
+}
+
+.flex-box ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.flex-box ul li a:hover {
+  text-decoration: underline;
+}
+
+.media-object {
+  width: 100%;
+  height: auto;
+}
+
+.media-object.img-thumbnail {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+.progresso {
+  padding-bottom: 10px;
+}
+
+
+.concluiu-artigo {
+  padding-bottom: 150px; /* Ajuste o valor conforme necessário */
+}
+.concluiu-video {
+  padding-top: 50px;
+}
+
+#progresso-lista li {
+  font-size: 18px;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
 }
