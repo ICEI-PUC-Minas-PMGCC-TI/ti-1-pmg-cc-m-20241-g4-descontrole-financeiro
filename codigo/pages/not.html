@@ -20,6 +20,7 @@
             cursor: pointer;
             margin-bottom: 10px;
             position: relative;
+            padding-bottom: 70px;
         }
 
         .solution {
@@ -101,21 +102,20 @@
         <div class="interface">
             <div class="logo">
                 <a href="#">
-                    <img src="../assets/images/logo.png" alt="logoYF" width="80px">
+                    <img src="../assets/images/logo.png" alt="logoYF" width="110px">
                 </a>
             </div>
             <nav class="menu-desktop">
                 <div class="txt-topo-site">
                     <i class="bi bi-bell corner-icon"></i>
                     <i class="bi bi-cash corner-icon"></i>
-                    <h2 class="tituloo">Notificação</h2>
+                    <h2 class="tituloo">NOTIFICAÇÃO</h2>
                     <div class="ordenar">
                         <ul>
                             <li><a href="painelControleMetas.html">Painel de Controle</a></li>
-                            <li><a href="#">Metas</a></li>
-                            <li><a href="#">Contas</a></li>
-                            <li><a href="#">Despesas</a></li>
-                            <li><a href="#">Menu</a></li>
+                            <li><a href="contas-pendentes.html">Contas Pendentes</a></li>
+                            <li><a href="despesas.html">Despesas</a></li>
+                            <li><a href="suporte.html">Suporte</a></li>
                         </ul>
                     </div>
                 </div>
@@ -142,14 +142,14 @@
                 <div class="popup">
                     <div class="detalhes">
                         <h2 class="titulo">Aviso!</h2>
-                        <p>Pagamento atrasado.</p>
-                        <button class="pagar"><a href="#">Contas Pendentes</a></button>
+                        <p>Pagamento pendente.</p>
+                        <button class="pagar"><a href="contas-pendentes.html">Contas Pendentes</a></button>
                     </div>
                     <button class="clear-btn" data-problem-id="problem1">Limpar</button>
                 </div>
                 <div id="solution1" class="solution">
                     <ol>
-                        <li><strong>Lazer:</strong></li>
+                        <li><strong>CONTA DE LUZ:</strong></li>
                         <li>Vencimento: 2024-05-30</li>
                         <li>Valor: R$1.200</li>
                         <li>Status: pendente.</li>
@@ -157,85 +157,29 @@
                 </div>
             </div>
 
-            <div class="problem" id="problem2" onclick="toggleSolution('solution2')">
-                <div class="popup">
-                    <div class="detalhes">
-                        <h2 class="titulo">Aviso!</h2>
-                        <p>Pagamento atrasado</p>
-                        <button class="pagar">Contas Pendentes</button>
+            <div class="popup-container">
+                <div class="problem" id="problem2" onclick="toggleSolution('solution2')">
+                    <div class="popup">
+                        <div class="detalhes">
+                            <h2 class="titulo">Aviso!</h2>
+                            <p>Pagamento pendente.</p>
+                            <button class="pagar"><a href="contas-pendentes.html">Contas Pendentes</a></button>
+                        </div>
+                        <button class="clear-btn" data-problem-id="problem2">Limpar</button>
                     </div>
-                    <button class="clear-btn" data-problem-id="problem2">Limpar</button>
-                </div>
-                <div id="solution2" class="solution">
-                    <ol>
-                        <li><strong>Transporte:</strong></li>
-                        <li>Vencimento: 2024-05-30</li>
-                        <li>Valor: R$1.200</li>
-                        <li>Status: pendente.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="problem" id="problem3" onclick="toggleSolution('solution3')">
-                <div class="popup">
-                    <div class="detalhes">
-                        <h2 class="titulo">Aviso!</h2>
-                        <p>Pagamento atrasado</p>
-                        <button class="pagar">Contas Pendentes</button>
+                    <div id="solution2" class="solution">
+                        <ol>
+                            <li><strong>CONTA DE AGUA:</strong></li>
+                            <li>Vencimento: 2024-05-30</li>
+                            <li>Valor: R$1.200</li>
+                            <li>Status: pendente.</li>
+                        </ol>
                     </div>
-                    <button class="clear-btn" data-problem-id="problem3">Limpar</button>
                 </div>
-                <div id="solution3" class="solution">
-                    <ol>
-                        <li><strong>Alimentação:</strong></li>
-                        <li>Vencimento: 2024-05-30</li>
-                        <li>Valor: R$1.200</li>
-                        <li>Status: pendente.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="problem" id="problem4" onclick="toggleSolution('solution4')">
-                <div class="popup">
-                    <div class="detalhes">
-                        <h2 class="titulo">Aviso!</h2>
-                        <p>Pagamento atrasado</p>
-                        <button class="pagar">Contas Pendentes</button>
-                    </div>
-                    <button class="clear-btn" data-problem-id="problem4">Limpar</button>
-                </div>
-                <div id="solution4" class="solution">
-                    <ol>
-                        <li><strong>Saúde:</strong></li>
-                        <li>Vencimento: 2024-05-30</li>
-                        <li>Valor: R$1.200</li>
-                        <li>Status: pendente.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="problem" id="problem5" onclick="toggleSolution('solution5')">
-                <div class="popup">
-                    <div class="detalhes">
-                        <h2 class="titulo">Aviso!</h2>
-                        <p>Pagamento atrasado</p>
-                        <button class="pagar">Contas Pendentes</button>
-                    </div>
-                    <button class="clear-btn" data-problem-id="problem5">Limpar</button>
-                </div>
-                <div id="solution5" class="solution">
-                    <ol>
-                        <li><strong>Moradia:</strong></li>
-                        <li>Vencimento: 2024-05-30</li>
-                        <li>Valor: R$1.200</li>
-                        <li>Status: pendente.</li>
-                    </ol>
-                </div>
-            </div>
-
 
         </div>
     </main>
+
 
 
     <script>
