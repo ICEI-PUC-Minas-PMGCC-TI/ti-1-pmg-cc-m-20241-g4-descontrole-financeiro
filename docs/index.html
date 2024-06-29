@@ -667,32 +667,39 @@
               </div>
 
               <section>
-                <h5>Estrutura de Dados - Contatos<span class="exemplo">EXEMPLO</span></h5>
+                <h5>Estrutura de Dados - Notificações<span class="exemplo">EXEMPLO</span></h5>
                 <p>Contatos da aplicação</p>
                 <pre>
                   {
-                    "id": 1,
-                    "nome": "Leanne Graham",
-                    "cidade": "Belo Horizonte",
-                    "categoria": "amigos",
-                    "email": "Sincere@april.biz",
-                    "telefone": "1-770-736-8031",
-                    "website": "hildegard.org"
+                    "painel_alerta": {
+                      "alertas": [
+                        {
+                          "tipo": "Vencimento/Lembrete",
+                          "descrição": "Fatura do cartão de crédito/aluguel/transporte",
+                          "data_vencimento": "2024-04-30",
+                          "valor": 150.00,
+                          "urgencia": "Alta/Média/Baixa"
+                        }
+                      ]
+                    }
                   }
+                  
                 </pre>
               </section>
 
               <section>
-                <h5>Estrutura de Dados - Usuários<span class="exemplo">EXEMPLO</span></h5>
+                <h5>Estrutura de Dados - Calendario</h5>
                 <pre>
                   {
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    email: "admin@abc.com"
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    login: "admin"
-                    nome: "Administrador do Sistema"
-                    senha: "123"
-                  }
+                    "calendar": { "2024-05-01": {
+                    "note": "Reunião com a equipe" },
+                    "2024-05-02": {
+                    "note": "Dentista às 15h"
+                    },
+                    "2024-05-03": {
+                    "note": "...."
+                    }, }
+                    }
                 </pre>
               </section>
 
