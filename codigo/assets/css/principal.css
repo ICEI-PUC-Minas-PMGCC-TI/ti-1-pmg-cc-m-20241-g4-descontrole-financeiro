@@ -163,17 +163,44 @@ body {
 
 
 /* footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .footer .social, .footer .contact {
+    padding-left: 30px;
     width: 48%;
 }
 
 .footer .social, .footer .contact div {
     height: 50px;
-    background-color: #eee;
     margin: 5px 0;
+}
+
+footer .social a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    padding: 20px;
+    background-color: #F3E7E7;
+}
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.social div {
+    margin: 0;
+}
+.insta {
+    padding-left: 20px;
+}
+
+/* Estilos para o footer */
+footer {
+    position: fixed; /* Fixa o footer */
+    bottom: 0; /* Alinha no rodapé da janela */
+    width: 100%; /* Ocupa toda a largura */
+    padding: 20px;
+    background-color: #F3E7E7;
 }
