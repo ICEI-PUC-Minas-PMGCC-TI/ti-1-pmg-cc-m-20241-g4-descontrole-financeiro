@@ -835,7 +835,74 @@
               <section>
                 <h5>Estrutura de Dados - Cadastro de Metas</h5>
                 <pre>
-                 
+                  class Meta {
+                    constructor(nome, valorAlvo, valorAtual) {
+                    this.nome = nome;
+                    this.valorAlvo = valorAlvo;
+                    this.valorAtual = valorAtual;
+                    }
+                    atualizarValorAtual(valor) {
+                    this.valorAtual = valor;
+                    }
+                    deletarMeta() {
+                    // Implementar lógica para deletar a meta, se necessário
+                    }
+                   }
+                   class PainelDeMetas {
+                    constructor() {
+                    this.metas = [];
+                    }
+                    adicionarMeta(nome, valorAlvo, valorAtual) {
+                    const novaMeta = new Meta(nome, valorAlvo, valorAtual);
+                    this.metas.push(novaMeta);
+                    this.exibirMetas();
+                    }
+                    atualizarMeta(indice, novoValorAtual) {
+                    this.metas[indice].atualizarValorAtual(novoValorAtual);
+                   Trabalho Interdisciplinar – ICEI PUC Minas
+                    this.exibirMetas();
+                    }
+                    deletarMeta(indice) {
+                    this.metas.splice(indice, 1);
+                    this.exibirMetas();
+                    }
+                    exibirMetas() {
+                    const containerDeMetas =
+                   document.getElementById('container-de-metas');
+                    containerDeMetas.innerHTML = '';
+                    this.metas.forEach((meta, indice) => {
+                    const elementoMeta = document.createElement('div');
+                    elementoMeta.className = 'meta';
+                    const nomeMeta = document.createElement('div');
+                    nomeMeta.className = 'nome-meta';
+                    nomeMeta.textContent = meta.nome;
+                    const barraDeProgresso =
+                   document.createElement('div');
+                    barraDeProgresso.className = 'barra-de-progresso';
+                    const progresso = (meta.valorAtual / meta.valorAlvo) *
+                   100;
+                    barraDeProgresso.style.width = `${progresso}%`;
+                    barraDeProgresso.textContent =
+                   `${progresso.toFixed(2)}%`;
+                   Trabalho Interdisciplinar – ICEI PUC Minas
+                    const relatorioMeta = document.createElement('div');
+                    relatorioMeta.className = 'relatorio-meta';
+                    relatorioMeta.textContent = `Meta: R$${meta.valorAlvo} |
+                   Atual: R$${meta.valorAtual}`;
+                    elementoMeta.appendChild(nomeMeta);
+                    elementoMeta.appendChild(barraDeProgresso);
+                    elementoMeta.appendChild(relatorioMeta);
+                    const botaoDeletar = document.createElement('button');
+                    botaoDeletar.textContent = 'Deletar';
+                    botaoDeletar.onclick = () => this.deletarMeta(indice);
+                    elementoMeta.appendChild(botaoDeletar);
+                    containerDeMetas.appendChild(elementoMeta);
+                    });
+                    }
+                   }
+                   const painel = new PainelDeMetas();
+                   painel.adicionarMeta('Compra de Carro', 30000, 15000);
+                   painel.adicionarMeta('Viagem', 5000, 2000);
                 </pre>
               </section>
 
