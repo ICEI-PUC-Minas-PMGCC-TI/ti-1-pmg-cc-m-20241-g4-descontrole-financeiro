@@ -307,11 +307,6 @@
                   </thead>
                   <tbody>
                       <tr>
-                          <th scope="row">RNF-001</th>
-                          <td>O sistema deve rodar em todas as plataformas</td>
-                          <td>MÉDIA</td>
-                      </tr>
-                      <tr>
                           <th scope="row">RNF-002</th>
                           <td>É fundamental garantir a segurança e a privacidade dos dados financeiros dos usuários</td>
                           <td>ALTA</td>
@@ -440,7 +435,26 @@
                 <p>Apresente o quadro de gerenciamento do time (Kanban), seu formato e as experiências na utilização dessa ferramenta (GitHub Projects) </p>
               </div>
               <p>
-                A gestão do projeto e divisão das tarefas foi feita de maneira coletiva, explorando as melhores habilidades de cada participante. Dessa forma, foi designada cada tarefa específica para o indivíduo que tinha mais familiaridade com o assunto. Sendo assim, a distribuição de tarefas ficou da seguinte maneira: 
+                Ogrupo optou por uma estratégia que valoriza a flexibilidade e a colaboração, adotando
+ metodologias ágeis como o Design Thinking e o Scrum para orientar o processo de criação e
+ execução do projeto. O Design Thinking facilitou a compreensão profunda das necessidades
+ do usuário, resultando em soluções sob medida para atender a essas demandas específicas.
+ Por sua vez, o Scrum proporcionou uma estrutura organizacional que ajudou na gestão
+ eficiente das atividades e no planejamento das etapas de desenvolvimento. A alocação de
+ responsabilidades e tarefas foi feita de maneira participativa, por meio de encontros semanais
+ nos quais os membros colaboraram para definir seus papéis. O uso de plataformas online,
+ como o Trello, possibilitou um acompanhamento em tempo real do progresso do projeto, das
+ tarefas em andamento e do estado geral da solução em desenvolvimento. Em suma, a adoção
+ de uma abordagem baseada em metodologias ágeis, a aplicação do Design Thinking e do
+ Scrum e a distribuição colaborativa de responsabilidades foram elementos essenciais para o
+ êxito do projeto
+ <p>
+  Agestão do projeto e divisão das tarefas foi feita de maneira coletiva, explorando as
+ melhores habilidades de cada participante. Dessa forma, foi designada cada tarefa específica
+ para o indivíduo que tinha mais familiaridade com o assunto. Sendo assim, durante o
+ desenvolvimento do projeto, a distribuição de tarefas ficou da seguinte maneira:
+ </p>
+                <p>SPRINT 1</p>
                 <ul>
                   <li>Alice = ficou responsável por liderar a parte de apresentação do projeto</li>
                   <li>Arthur = ficou responsável por fazer o controle de versão no GitHub</li>
@@ -448,6 +462,27 @@
                   <li>Eduardo = ficou responsável por fazer o fluxo de usuários, wireframes e protótipo interativo</li>
                   <li>Felipe = ficou responsável por fazer a documentação do projeto</li>
               </ul>
+
+              <p>SPRINT 2 E 3</p>
+              <p>Durante as sprints cada participante ficou encarregado de desenvolver as próprias
+                funcionalidades</p>
+              <ul>
+                <li>Alice =Notificações e calendário</li>
+                <li>Arthur = Contas pendentes e calculadora de investimentos</li>
+                <li>Beatriz = Cadastro de ganhos e despesas e apresentação de tutoriais de investimento</li>
+                <li>Eduardo =Painel de controle e cadastro de metas</li>
+                <li>Felipe = Suporte e calculadora de poupança</li>
+              </ul>
+              <p>SPRINT 4</p>
+              <p>Todos os participantes ajudaram na parte de juntar as funcionalidades e ajustá-las para a
+                apresentação final</p>
+                <ul>
+                  <li>Alice =Slides de apresentação</li>
+                  <li>Arthur = Documentação</li>
+                  <li>Beatriz = Vídeo de apresentação</li>
+                  <li>Eduardo =Edição do vídeo</li>
+                  <li>Felipe = Documentação</li>
+                </ul>
               <p>Vale ressaltar que todos os alunos fizeram parte de todas essas etapas do projeto, mas cada um tinha o seu foco principal</p>
               <p>Aqui está o nosso Kanban: <a href="https://trello.com/b/ZrUaZG2X/kanban-template">Quadro de Tarefas</a></p>
               <p>
@@ -480,6 +515,8 @@
                   <li>Git pull = permite atualizar local com alterações do repositório remoto</li>
                 </ul>
               </p>
+              <p>Além do Git, outra tecnologia utilizada para fazer o versionamento do código foi o aplicativo
+                GitHub Desktop.</p>
             </section>
           </section>
           <hr class="divider">
@@ -746,49 +783,18 @@
               <section>
                 <h5>Estrutura de Dados - Calculadora de Investimentos</h5>
                 <pre>
-                      {                 
-                      "simulador_investimento": {
-                        "titulo": "SIMULADOR DE INVESTIMENTO",
-                        "formulario": {
-                        "campos": [
-                        {
+                  {
+                    "simulacoes": [
+                      {
                         "id": 1,
-                        "tipo": "text",
-                        "label": "NOME",
-                      Trabalho Interdisciplinar – ICEI PUC Minas 
-                        "placeholder": "",
-                        "valor": ""
-                        },
-                        {
-                        "id": 2,
-                        "tipo": "number",
-                        "label": "MENSALIDADE",
-                        "prefixo": "R$",
-                        "placeholder": "EX: 20 REAIS",
-                        "valor": ""
-                        },
-                        {
-                        "id": 3,
-                        "tipo": "select",
-                        "label": "TEMPO DE CONTRIBUIÇÃO",
-                        "opcoes": [
-                        {"value": "1", "label": "1 MÊS"},
-                        {"value": "3", "label": "3 MESES"},
-                        {"value": "6", "label": "6 MESES"},
-                        {"value": "12", "label": "12 MESES"}
-                        ],
-                        "valor": ""
-                        }
-                        ],
-                        "botao": {
-                        "id": 4,
-                        "tipo": "button",
-                        "label": "SIMULAR"
-                      Trabalho Interdisciplinar – ICEI PUC Minas 
-                        }
-                        }
-                        }
+                        "nome": "Pedro",
+                        "aporteInicial": 10000000.00,
+                        "investimentoMensal": 10000000.00,
+                        "rendimentoAnual": 12,
+                        "tempoContribuicao": 120
                       }
+                    ]
+                  }
                 </pre>
               </section>
 
@@ -835,129 +841,35 @@
               <section>
                 <h5>Estrutura de Dados - Cadastro de Metas</h5>
                 <pre>
-                  class Meta {
-                    constructor(nome, valorAlvo, valorAtual) {
-                    this.nome = nome;
-                    this.valorAlvo = valorAlvo;
-                    this.valorAtual = valorAtual;
-                    }
-                    atualizarValorAtual(valor) {
-                    this.valorAtual = valor;
-                    }
-                    deletarMeta() {
-                    // Implementar lógica para deletar a meta, se necessário
-                    }
-                   }
-                   class PainelDeMetas {
-                    constructor() {
-                    this.metas = [];
-                    }
-                    adicionarMeta(nome, valorAlvo, valorAtual) {
-                    const novaMeta = new Meta(nome, valorAlvo, valorAtual);
-                    this.metas.push(novaMeta);
-                    this.exibirMetas();
-                    }
-                    atualizarMeta(indice, novoValorAtual) {
-                    this.metas[indice].atualizarValorAtual(novoValorAtual);
-                   Trabalho Interdisciplinar – ICEI PUC Minas
-                    this.exibirMetas();
-                    }
-                    deletarMeta(indice) {
-                    this.metas.splice(indice, 1);
-                    this.exibirMetas();
-                    }
-                    exibirMetas() {
-                    const containerDeMetas =
-                   document.getElementById('container-de-metas');
-                    containerDeMetas.innerHTML = '';
-                    this.metas.forEach((meta, indice) => {
-                    const elementoMeta = document.createElement('div');
-                    elementoMeta.className = 'meta';
-                    const nomeMeta = document.createElement('div');
-                    nomeMeta.className = 'nome-meta';
-                    nomeMeta.textContent = meta.nome;
-                    const barraDeProgresso =
-                   document.createElement('div');
-                    barraDeProgresso.className = 'barra-de-progresso';
-                    const progresso = (meta.valorAtual / meta.valorAlvo) *
-                   100;
-                    barraDeProgresso.style.width = `${progresso}%`;
-                    barraDeProgresso.textContent =
-                   `${progresso.toFixed(2)}%`;
-                   Trabalho Interdisciplinar – ICEI PUC Minas
-                    const relatorioMeta = document.createElement('div');
-                    relatorioMeta.className = 'relatorio-meta';
-                    relatorioMeta.textContent = `Meta: R$${meta.valorAlvo} |
-                   Atual: R$${meta.valorAtual}`;
-                    elementoMeta.appendChild(nomeMeta);
-                    elementoMeta.appendChild(barraDeProgresso);
-                    elementoMeta.appendChild(relatorioMeta);
-                    const botaoDeletar = document.createElement('button');
-                    botaoDeletar.textContent = 'Deletar';
-                    botaoDeletar.onclick = () => this.deletarMeta(indice);
-                    elementoMeta.appendChild(botaoDeletar);
-                    containerDeMetas.appendChild(elementoMeta);
-                    });
-                    }
-                   }
-                   const painel = new PainelDeMetas();
-                   painel.adicionarMeta('Compra de Carro', 30000, 15000);
-                   painel.adicionarMeta('Viagem', 5000, 2000);
+                  {
+                    "id": 1,
+                    "descricao": "Economizar para a viagem",
+                    "valorMaximo": 5000,
+                    "valorAtual": 0,
+                    "dataCriacao": "2024-06-30",
+                    "dataConclusao": null,
+                    "concluida": false
+                }
                 </pre>
               </section>
 
               <section>
                 <h5>Estrutura de Dados - Relatórios</h5>
                 <pre>
-                  {
-                    "wireframe": {
-                    "painel_de_controle": {
-                    "titulo": "Painel de Controle",
-                    "conteudo": {
-                    "grafico": {
-                    "tipo": "grafico",
-                    "dados": {} // Dados do gráfico
-                    },
-                    "relatorio": {
-                    "tipo": "relatorio",
-                    "dados": {} // Dados do relatório
-                    }
-                    }
-                    },
-                    "painel_de_metas": {
-                    "titulo": "Painel de Metas",
-                    "conteudo": {
-                    "grafico": {
-                    "tipo": "grafico",
-                    "dados": {} // Dados do gráfico
-                    },
-                    "relatorio": {
-                    "tipo": "relatorio",
-                    "dados": {} // Dados do relatório
-                    }
-                    }
-                    },
-                    "menu": {
-                   Trabalho Interdisciplinar – ICEI PUC Minas
-                    "itens": [
-                    {
-                    "nome": "Painel de Controle",
-                    "icone": "icone-painel-de-controle.png"
-                    },
-                    {
-                    "nome": "Painel de Metas",
-                    "icone": "icone-painel-de-metas.png"
-                    },
-                    {
-                    "nome": "Sobre os Desenvolvedores",
-                    "icone": "icone-desenvolvedores.png",
-                    "link": "sobre_desenvolvedores.html" // Link para a aba
-                   sobre os desenvolvedores
-                    }
+                  const financialSummary = {
+                    totalReceitas: [
+                      { month: 'Janeiro', amount: 5000 },
+                      { month: 'Fevereiro', amount: 4500 },
+                      { month: 'Março', amount: 6000 },
+                      { month: 'Abril', amount: 7000 },
+                    ],
+                    totalDespesas: [
+                      { month: 'Janeiro', amount: 3000 },
+                      { month: 'Fevereiro', amount: 3200 },
+                      { month: 'Março', amount: 2800 },
+                      { month: 'Abril', amount: 3500 },
                     ]
-                    }
-                    }
-                   }
+                  };
                 </pre>
               </section>
 
@@ -982,7 +894,6 @@
                     "descricao": "Descrição do Problema 2...",
                     "status": "Resolvido"
                     },
-                    // Outros problemas...
                     ],
                     "novo_problema": {
                     "titulo": "Reportar um Novo Problema",
@@ -992,7 +903,6 @@
                     }
                     }
                     }
-                   Trabalho Interdisciplinar – ICEI PUC Minas
                    }
                 </pre>
               </section>
@@ -1071,46 +981,51 @@
               <p>Apresente uma lista de perguntas e respostas comuns associadas ao projeto. Inclua perguntas como: (1) detalhes de acesso e uso do projeto; (2) informações sobre a instalação e configuração da aplicação; (3) questões sobre a manutenção da aplicação; (4) detalhes sobre a integração da aplicação com outros sistemas; (5) questões sobre a segurança da aplicação.</p>
             </div>
 
-            <span class="exemplo">EXEMPLO</span>
+            
             <div class="row">
               <div class="col-lg-12">
                 <div class="accordion accordion-alterate arrow-right" id="popularTopics">
                   <div class="card">
                     <div class="card-header" id="heading1">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
-                          aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse1">Por que eu deveria usar este site?</a> </h5>
                     </div>
                     <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
-                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially
-                        unchanged. </div>
+                      <div class="card-body"> Você deve considerar utilizar este site porque ele oferece informações valiosas e práticas sobre educação financeira pessoal, direcionadas especificamente para pessoas que enfrentam desafios na gestão de suas finanças diárias. Aqui, você encontrará recursos acessíveis e claros, como ferramentas para criar orçamentos, monitorar gastos e estabelecer metas financeiras realistas. Além disso, o site busca educar de maneira eficaz sobre temas como endividamento, poupança e investimentos, proporcionando orientações práticas para ajudá-lo a melhorar sua saúde financeira e alcançar seus objetivos de longo prazo.</div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading2">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
-                          aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse2">Quais são os impactos do uso desse site na minha vida?</a> </h5>
                     </div>
                     <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
-                        accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-                        et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. </div>
+                      <div class="card-body"> Este site pode transformar sua vida ao oferecer conhecimentos e ferramentas práticas que ajudam na gestão eficaz das suas finanças pessoais. Ao aprender a criar e manter um orçamento, entender os riscos do endividamento excessivo e desenvolver hábitos financeiros saudáveis, você estará mais bem preparado para enfrentar desafios financeiros cotidianos. Isso pode resultar em uma maior estabilidade financeira, menos estresse relacionado a questões monetárias e uma maior capacidade de planejar e realizar metas financeiras de longo prazo, como a compra de uma casa ou a realização de uma viagem. Ao adotar as práticas e conhecimentos oferecidos pelo site, você poderá construir um futuro financeiramente mais seguro e alcançar uma maior tranquilidade em sua vida financeira.</div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading3">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
-                          aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
-                          products?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse3">Como começar a utilizar as ferramentas disponíveis neste site?</a> </h5>
                     </div>
                     <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
-                        essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
-                        imperdiet. </div>
+                      <div class="card-body"><li>Explore as funcionalidades: Navegue pelo site para conhecer as ferramentas oferecidas, como criadores de orçamento, calculadoras financeiras e guias educativos.</li>
+
+                        <li>
+                          Defina seus objetivos financeiros: Estabeleça metas claras, como economizar para emergências, pagar dívidas ou investir para o futuro.
+                          
+                        </li>
+                        <li>Utilize os recursos educativos: Leia os artigos e tutoriais disponíveis para aprender sobre temas como planejamento financeiro, gestão de dívidas e estratégias de investimento.</li>
+                        
+                        <li>Aplique o que você aprendeu: Implemente as estratégias e dicas sugeridas no seu dia a dia financeiro, ajustando conforme necessário para melhorar continuamente sua situação financeira.</li>
+                        
+                        <li>Ao seguir esses passos, você estará no caminho para utilizar eficazmente as ferramentas e recursos deste site para melhorar sua gestão financeira e alcançar seus objetivos financeiros pessoais.</li>
+                        
+                        
+                        
+                        
+                        
+                        </div>
                     </div>
                   </div>
                 </div>
