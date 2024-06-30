@@ -1,23 +1,18 @@
 {
-    "comentarios": [
-      {
-        "nome": "Exemplo",
-        "texto": "Aaaa",
-        "id": 0
-      },
-      {
-        "nome": "Teste",
-        "texto": "Adorei a receita",
-        "id": 1
-      },
-      {
-        "texto": "Testando",
-        "id": 2
-      },
-      {
-        "nome": "MatheusTPG",
-        "texto": "Testando123",
-        "id": 3
-      }
-    ]
-  }
+  "usuarios": [
+    {
+      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuario Comum",
+      "email": "user@abc.com"
+}
+]
+}
